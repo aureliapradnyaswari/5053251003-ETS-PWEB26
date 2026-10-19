@@ -51,7 +51,7 @@ function muatBulanan() {
             localStorage.getItem("uangBulananDompetKu") || "{}"
         );
         return data && typeof data === "object" &&
-               !Array.isArray(data) ? data : {};
+            !Array.isArray(data) ? data : {};
     } catch {
         return {};
     }
@@ -101,18 +101,19 @@ function tampilkanRiwayat() {
         const baris = document.createElement("tr");
 
         const kolomKeterangan = document.createElement("td");
-        kolomKeterangan.textContent =
-            item.catatan || item.kategori;
+        kolomKeterangan.textContent = item.kategori;
 
         const kolomTipe = document.createElement("td");
         kolomTipe.textContent =
-            item.jenis === "pemasukan"
-            ? "Pemasukan" : "Pengeluaran";
+            item.jenis === "pemasukan" ? "Pemasukan" : "Pengeluaran";
         kolomTipe.className = item.jenis;
 
         const kolomNominal = document.createElement("td");
         kolomNominal.textContent = formatRupiah(item.nominal);
         kolomNominal.className = item.jenis;
+
+        const kolomCatatan = document.createElement("td");
+        kolomCatatan.textContent = item.catatan || "-";
 
         const kolomAksi = document.createElement("td");
         const tombolHapus = document.createElement("button");
@@ -128,6 +129,7 @@ function tampilkanRiwayat() {
             kolomKeterangan,
             kolomTipe,
             kolomNominal,
+            kolomCatatan,
             kolomAksi
         );
 
@@ -171,6 +173,7 @@ form.addEventListener("submit", function(event) {
 
     pesanError.textContent = "";
     form.reset();
+    inputTanggal.value = tanggalLokal();
 
     updateSaldo();
     tampilkanRiwayat();
@@ -179,6 +182,7 @@ form.addEventListener("submit", function(event) {
 
 tabelRiwayat.addEventListener("click", function(event) {
     const tombol = event.target.closest(".btn-hapus");
+
     if (!tombol) return;
 
     const id = tombol.dataset.id;
@@ -260,9 +264,8 @@ function hitungJatahHarian() {
 
     const jatahHarian = Math.max(0, sisaUang / sisaHari);
 
-
-    const jatahAwalHari = Math.max(0,
-        (sisaUang + pengeluaranHariIni) / sisaHari
+    const jatahAwalHari = Math.max(
+        0, (sisaUang + pengeluaranHariIni) / sisaHari
     );
 
     document.getElementById("tampilanBulanan").textContent =

@@ -12,7 +12,8 @@ body {
 
 header {
     background-color: white;
-    padding: 15px;
+    padding: 15px 5%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .container {
@@ -23,7 +24,7 @@ header {
 }
 
 h1 {
-    color: #4f1544;
+    color: rgb(153, 28, 109);
     font-size: 26px;
     margin: 0;
 }
@@ -42,5 +43,189 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffc5f4;
+    color: #ff98d9;
+}
+
+section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.box {
+    background-color: white;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+#Beranda > p {
+    display: inline-block;
+    background-color: white;
+    padding: 20px;
+    margin: 5px 10px 10px 0;
+    border-radius: 10px;
+    min-width: 200px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+#Beranda > p span {
+    display: block;
+    font-size: 21px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#totalPemasukan { color: #16a34a; }
+#totalPengeluaran { color: #dc2626; }
+#saldo { color: #621044; }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d9deeb;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #621044;
+}
+
+button {
+    background-color: #621044;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #460930;
+}
+
+#formTransaksi {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+#jatahHarian {
+    color: #621044;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#sisaUang {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+#peringatanBoros {
+    margin-top: 15px;
+}
+
+.peringatan {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.aman {
+    background-color: #dcfce7;
+    color: #15803d;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+#pesanError, #errorBulanan {
+    color: #dc2626;
+    font-size: 13px;
+    margin: 0;
+}
+
+#Riwayat-Transaksi .box {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #f5f7ff;
+    color: #26324d;
+}
+
+th:nth-child(1) { width: 18%; }
+th:nth-child(2) { width: 17%; }
+th:nth-child(3) { width: 20%; }
+th:nth-child(4) { width: 30%; }
+th:nth-child(5) { width: 15%; }
+
+td:nth-child(3) {
+    white-space: nowrap;
+}
+
+td:nth-child(4) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+tbody tr:hover {
+    background-color: #faf5fa;
+}
+
+.pemasukan {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.pengeluaran {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.btn-hapus {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 8px 12px;
+    white-space: nowrap;
+}
+
+.btn-hapus:hover {
+    background-color: #fecaca;
 }
