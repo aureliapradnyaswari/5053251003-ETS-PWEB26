@@ -6,12 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>DompetKu</title>
         <link rel="stylesheet" href="style.css">
+        
     </head>
 
     <body>
        <header>
             <div class="container"> 
-                <h3>DompetKu</h3>
+                <h1>DompetKu</h1>
                 <nav>
                     <ul>
                         <li><a href="#Beranda">Beranda</a></li>
@@ -27,6 +28,47 @@
             <p>Pemasukan: <span id="totalPemasukan"></span></p>
             <p>Pengeluaran: <span id="totalPengeluaran"></span></p>
             <p>Saldo: <span id="saldo"></span></p>
+
+        
+        <div class="box">
+            <h2>Pengaturan Uang Bulanan</h2>
+
+            <form id="formBulanan">
+                <label for="uangBulanan">Uang Saku Bulanan (Rp)</label>
+                <input type="number" id="uangBulanan"
+                    placeholder="Contoh: 1500000" min="1">
+
+                <p id="errorBulanan" role="alert"></p>
+                <button type="submit">Simpan Uang Bulanan</button>
+            </form>
+        </div>
+
+        <div class="box">
+            <h3>Jatah Harian Anak Kos</h3>
+
+            <p>Uang Bulanan:
+                <span id="tampilanBulanan">Rp 0</span>
+            </p>
+
+            <p>Sisa Uang:
+                <span id="sisaUang">Rp 0</span>
+            </p>
+
+            <p>Sisa Hari Bulan Ini:
+                <span id="sisaHari">0</span> hari
+            </p>
+
+            <h3>Jatah Harian:
+                <span id="jatahHarian">Rp 0</span>
+            </h3>
+
+            <p>Pengeluaran Hari Ini:
+                <span id="pengeluaranHariIni">Rp 0</span>
+            </p>
+
+            <p id="peringatanBoros" role="status"></p>
+        </div>
+
     </section>
 
     <section id = "Transaksi">
@@ -79,6 +121,8 @@
             </table>
         </div>
     </section>
+
+    <script src="script.js"></script>
 
     </body>
 </html>
