@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DompetKu</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+       <header>
+            <div class="container"> 
+                <h3>DompetKu</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#Beranda">Beranda</a></li>
+                        <li><a href="#Transaksi">Transaksi</a></li>
+                        <li><a href="#Riwayat-Transaksi">Riwayat Transaksi</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    
+    <section id = "Beranda">
+        <h2>Ringkasan Keuangan</h2>
+            <p>Pemasukan: <span id="totalPemasukan"></span></p>
+            <p>Pengeluaran: <span id="totalPengeluaran"></span></p>
+            <p>Saldo: <span id="saldo"></span></p>
+    </section>
+
+    <section id = "Transaksi">
+    <h2>Tambah Transaksi</h2>
+        <form id="formTransaksi">
+            <input type="date" id="tanggal">
+
+            <select id="jenis">
+                <option value="" disabled selected hidden>Jenis Transaksi</option>
+                <option value="pemasukan">Pemasukan</option>
+                <option value="pengeluaran">Pengeluaran</option>
+            </select>
+
+            <select id="kategori">
+                <option value="" disabled selected hidden>Pilih Kategori</option>
+                <option value="Makan">Makan</option>
+                <option value="Transportasi">Transportasi</option>
+                <option value="Belanja">Belanja</option>
+                <option value="Hiburan">Hiburan</option>
+                <option value="Lainnya">Lainnya</option>
+            </select>
+
+            <input type="number" id="nominal"
+                placeholder="Nominal" min="1">
+
+            <input type="text" id="catatan"
+                placeholder="Catatan (opsional)">
+
+            <p id="pesanError" role="alert"></p>
+            <button type="submit">Simpan Transaksi</button>
+        </form>
+    </section>
+
+    <section id="Riwayat-Transaksi">
+        <div class="box">
+            <h3 class="tabel-riwayat">Riwayat Transaksi</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Keterangan</th>
+                        <th scope="col">Tipe</th>
+                        <th scope="col">Nominal</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="daftarTransaksi">
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    </body>
+</html>
